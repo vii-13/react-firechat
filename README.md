@@ -33,3 +33,6 @@ En el caso de colaboradores si queremos que otros miembros del entorno de trabaj
 - Cancelar la publicación o eliminar un flujo de trabajo
  Y para finalizar recordar que cualquier colaborador de un flujo de trabajo puede agregar o quitar a otros colaboradores, incluidos los administradores. 
 - Cómo administrar los colaboradores de los flujos de trabajo
+
+
+agregando algo inncesario-
