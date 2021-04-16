@@ -33,3 +33,9 @@ En el caso de colaboradores si queremos que otros miembros del entorno de trabaj
 - Cancelar la publicación o eliminar un flujo de trabajo
  Y para finalizar recordar que cualquier colaborador de un flujo de trabajo puede agregar o quitar a otros colaboradores, incluidos los administradores. 
 - Cómo administrar los colaboradores de los flujos de trabajo
+- 
+## Usos del pull request
+Creacion del Pull request. se utiliza para no solo llevar  las tareas de forma ordenada
+si no para crear propuestas y cambios que pueden ser agregados.
+
+en pocas palabras pull request es una participaciona agaregar.
