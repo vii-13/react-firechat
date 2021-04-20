@@ -5,6 +5,8 @@ import sigInwithGoogle from './login/signInWithGoogle';
 
 
 function App() {
+//Entegracion del hook useAuthState
+  const { user, inicializing}= useAuth(firbase.auth());
 // Renderizar el componente Button
   return (
     <div>
