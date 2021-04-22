@@ -1,8 +1,8 @@
 const Button = ({
-    onclick = null,
+    onClick = null,
     children = null
 }) => 
 (
-    <button onclick ={onclick} >{children} </button> 
+    <button onClick ={onClick} >{children} </button> 
 );
 export default Button;  

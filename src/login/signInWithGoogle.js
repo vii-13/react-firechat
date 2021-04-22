@@ -1,6 +1,6 @@
 import {googleAuthProvider, firebase} from '../config/firebase';
 
-const sigInwithGoogle = async () => {
+const signInWithGoogle = async () => {
     //coloca el lenguaje de preferencia del dispositivo
     firebase.auth().useDeviceLanguage();
 
@@ -13,4 +13,4 @@ const sigInwithGoogle = async () => {
         }
   };
 
-export default sigInwithGoogle;
+export default signInWithGoogle;

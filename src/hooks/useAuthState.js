@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react'; 
+
 function useAuthState(auth) {
-    const [Initializing, setInitializing]= useState(true);
-    const[user, setUser]= useSatet(() => auth.currentUser);
+    const [initializing]= useState(true);
+    const[user, setUser]= useState(() => auth.currentUser);
 
 useEffect(() => {
     const unsubcribe = auth.onAuthStateChanged(user =>{
@@ -16,7 +18,7 @@ return unsubcribe;
     
 },[auth, initializing]);
 
-return {user, inicializing};
+return {user, initializing};
 
 }
 
