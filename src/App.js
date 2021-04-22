@@ -7,7 +7,15 @@ function App() {
 //Entegracion del hook useAuthState
   const { user, initializing }= useAuthState(firebase.auth());
 // Renderizar el componente Button
-  return (
+  //Renderezar en funcion de la existencia de un usuario con operador ternario.
+const renderLoging=() => { 
+  if(initializing) {
+    return <div>
+      <h1>Loading...</h1>
+      </div>
+  }
+}
+return (
     <div>
       {
         user ? (
