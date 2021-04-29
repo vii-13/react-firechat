@@ -23,6 +23,7 @@ return (
           <>
           <Button onClick={signOut}> Sing in with Google</Button>
           <p>Bienvenido al CHAT</p>
+          <Channel user=(user) />
           </>
         ) :<Button onClick={signInWithGoogle}> Sing in with Google</Button>
       }
