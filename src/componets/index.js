@@ -1,5 +1,5 @@
-import Button from ´´./Button´;
-import Channel from ´./Channel´;
+import Button from './Button';
+import Channel from './Channel';
 
 export {
     Button,
