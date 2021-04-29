@@ -17,14 +17,15 @@ const Channel = ({ user = null }) => {
         const data = querysnapshot.docs.map(doc => ({
             ...doc.data(),
             id: doc.id,
-        });
-        //cleanup
-        return unsubscribe;
-           }, [])
-    }
-    )
+        }));
 
-    return <ul></ul>
+        //Actualizo los mensajes ontenidos desde la bd.
+setMessages(data);
+
+        });
+     
+    </ul>;
+
 };
 
 export default Channel;
