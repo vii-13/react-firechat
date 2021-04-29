@@ -23,7 +23,17 @@ const Channel = ({ user = null }) => {
 setMessages(data);
 
         });
-     
+        //cleanup
+        return unsubscribe;
+
+           }, [])
+    
+
+    return <ul>
+        { messages.map(messages => (
+            //Todos los mensajes seran mostrados en una lista.
+            <li key={messages.id}>{messages.text}</li>
+        ))}
     </ul>;
 
 };
