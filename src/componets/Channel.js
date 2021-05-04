@@ -1,38 +1,97 @@
+
+
 import { useEffect, useState } from "react";
-import { db } from "../config/firebase";
+import { db, firebase } from "../config/firebase";
+import Message from './Message';
 
 const Channel = ({ user = null }) => {
   const [messages, setMessages] = useState([]);
 
   //Necesito cargar los mensajes desde la BD
   useEffect(() => {
-    /*
-        crear el query de los mensajes.
-        cargar los 100 mensajes ordenados por fecha.
-        */
-    const query = db.collection("messages").orderBy("createdAt").limit(100);
-    const unsubscribe = query.onSnapshot((querysnapshot) => {
-      //obtiene todos los mensajes desde la bd con su ID.
-      const data = querysnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
+  /*
+  Crear el query de los mensajes,
+  Cargar 100 mensajes ordenados por fecha.
+  */
+ const query = db.collection('messages')
+ .orderBy('createdAt')
+ .limit(100);
 
-      //Actualizo los mensajes ontenidos desde la bd.
-      setMessages(data);
-    });
-    //cleanup
-    return unsubscribe;
-  }, []);
+ const unsuscribe = query.onSnapchat(querySnapshot => {
+   
+  //Obtiene todos los mensajes desde la bd con su ID.
+   const data= querySnapshot.docs.map(doc => ({
+     ...doc.data(),
+     id: doc.id,
+   }));
+   //Actualizo os mensajes obtenidos desde la bd.
+   setMessage(data);
+   });
+    //CleanUp
+    return ununsubcribe;
 
-  return (
-    <ul>
-      {messages.map((messages) => (
-        //Todos los mensajes seran mostrados en una lista.
-        <li key={messages.id}>{messages.text}</li>
-      ))}
-    </ul>
-  );
-};
+   }, []) 
 
-export default Channel;
+   //Codigo para agregar nuevos mensajes
+    const { uid, displayName, photoURL} = user; 
+     const [newMessage, setNewMessage] = useState('');
+
+     const handleMessageOnChange = (e) => {
+       e.preventDefault();
+       setNewMessage(e.target.value);
+     }
+     const messagesRef = db.collection ('menssage');
+     
+     const handleOnSubmit = e => {
+       e.preventDefault();
+
+       const trimmedMessage = newMessage.trim();
+       if(trimmedMessage) {
+         //Add new message in Firestore
+         messagesRef.add({
+           text: trimmedMesaage,
+           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+           uld,
+           displayName,
+           photoURL,
+         });
+         //Clear input field
+         setNewMessage('');
+       }
+     };
+     const inputRef = useRef();
+     useEffect (() => {
+       if (inputRef.current){
+         inputRef.current.focus();
+       }
+     }, [inputRef]);
+     return ( 
+       <>
+       <ul>
+         {messages.map(message => (
+         <li key={message.id}>
+           <Message {...message} />
+         </li>
+         ))}
+         </ul>
+
+         <form 
+         onSubmit={handleOnSubmit}>
+           <input 
+           ref={inputRef}
+           type="text"
+           value={newMessage}
+           onChange={handleMessageOnChange}
+           placeholder="Escribe tu mensaje aquí..."
+           />
+           <button 
+           type="submit"
+           disabled={!newMessage}
+           >
+               Send
+           </button>
+           </form>
+           </>
+                  );
+        };
+           export default Channel;
