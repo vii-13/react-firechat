@@ -21,7 +21,7 @@ function App() {
     <div>
       {user ? (
         <>
-          <Button onClick={signOut}> Sing in with Google</Button>
+          <Button onClick={signOut}> Logout Google</Button>
           <p>Bienvenido al CHAT</p>
           <Channel user={user} />
         </>
