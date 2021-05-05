@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-firechat/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/react-firechat/static/js/main.b7808b5f.chunk.js",
+    "main.js.map": "/react-firechat/static/js/main.b7808b5f.chunk.js.map",
+    "runtime-main.js": "/react-firechat/static/js/runtime-main.dd43656f.js",
+    "runtime-main.js.map": "/react-firechat/static/js/runtime-main.dd43656f.js.map",
+    "static/js/2.aa1a27d3.chunk.js": "/react-firechat/static/js/2.aa1a27d3.chunk.js",
+    "static/js/2.aa1a27d3.chunk.js.map": "/react-firechat/static/js/2.aa1a27d3.chunk.js.map",
+    "static/js/3.585dfa98.chunk.js": "/react-firechat/static/js/3.585dfa98.chunk.js",
+    "static/js/3.585dfa98.chunk.js.map": "/react-firechat/static/js/3.585dfa98.chunk.js.map",
+    "index.html": "/react-firechat/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/react-firechat/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.aa1a27d3.chunk.js.LICENSE.txt": "/react-firechat/static/js/2.aa1a27d3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd43656f.js",
+    "static/js/2.aa1a27d3.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.b7808b5f.chunk.js"
+  ]
+}
