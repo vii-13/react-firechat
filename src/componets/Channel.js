@@ -1,6 +1,6 @@
 
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { db, firebase } from "../config/firebase";
 import Message from './Message';
 
@@ -14,10 +14,10 @@ const Channel = ({ user = null }) => {
   Cargar 100 mensajes ordenados por fecha.
   */
  const query = db.collection('messages')
- .orderBy('createdAt')
- .limit(100);
+     .orderBy('createdAt')
+     .limit(100);
 
- const unsuscribe = query.onSnapchat(querySnapshot => {
+ const unsubscribe = query.onSnapshot(querySnapshot => {
    
   //Obtiene todos los mensajes desde la bd con su ID.
    const data= querySnapshot.docs.map(doc => ({
@@ -25,10 +25,10 @@ const Channel = ({ user = null }) => {
      id: doc.id,
    }));
    //Actualizo os mensajes obtenidos desde la bd.
-   setMessage(data);
+   setMessages(data);
    });
-    //CleanUp
-    return ununsubcribe;
+    //Clean Up
+    return unsubscribe;
 
    }, []) 
 
@@ -49,9 +49,9 @@ const Channel = ({ user = null }) => {
        if(trimmedMessage) {
          //Add new message in Firestore
          messagesRef.add({
-           text: trimmedMesaage,
+           text: trimmedMessage,
            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-           uld,
+           uid,
            displayName,
            photoURL,
          });
